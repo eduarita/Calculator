@@ -1,2 +1,2 @@
 # Calculator
- Calculator Programming languages class - UNAH
+ Calculator for Programming languages class - UNAH
