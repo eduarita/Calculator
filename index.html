@@ -1,57 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculadora</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+        integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
+
 <body>
 
-    <div id="calculator" >
-        
-        <div id="output-pantalla">
-            <input id="pantalla" type="textfield" readonly>
-        </div>
-            
-        
+    <div id="calculator">
+        <form name="calculadora">
+            <input id="pantalla" class="input-group-lg" type="textfield" readonly>
+            <div class="container">
+                <div class="contenedor-numero">
+                    <button id="1" type="button" class="btn btn-light" value="1" onclick="agregar(this.id)"><i
+                            class="fa-solid fa-1"></i></button>
+                    <button id="2" type="button" class="btn btn-light" value="2" onclick="agregar(this.id)"><i
+                            class="fa-solid fa-2"></i></button>
+                    <button id="3" type="button" class="btn btn-light" value="3" onclick="agregar(this.id)"><i
+                            class="fa-solid fa-3"></i></button>
+                    <button id="4" type="button" class="btn btn-light" value="4" onclick="agregar(this.id)"><i
+                            class="fa-solid fa-4"></i></button>
+                    <button id="5" type="button" class="btn btn-light" value="5" onclick="agregar(this.id)"><i
+                            class="fa-solid fa-5"></i></button>
+                    <button id="6" type="button" class="btn btn-light" value="6" onclick="agregar(this.id)"><i
+                            class="fa-solid fa-6"></i></button>
+                    <button id="7" type="button" class="btn btn-light" value="7" onclick="agregar(this.id)"><i
+                            class="fa-solid fa-7"></i></button>
+                    <button id="8" type="button" class="btn btn-light" value="8" onclick="agregar(this.id)"><i
+                            class="fa-solid fa-8"></i></button>
+                    <button id="9" type="button" class="btn btn-light" value="9" onclick="agregar(this.id)"><i
+                            class="fa-solid fa-9"></i></button>
+                    <button id="0" type="button" class="btn btn-light" value="0" onclick="agregar(this.id)"><i
+                            class="fa-solid fa-0"></i></button>
+                </div>
 
-        <!--<i class="fa-solid fa-c"></i>-->
-        <div class="container">
-
-            <div class="contenedor-numero">
-                <button id="1" type="button" class="btn btn-light" value="1" onclick="agregar(this.id)"><i class="fa-solid fa-1"></i></button>
-                <button id="2" type="button" class="btn btn-light" value="2" onclick="agregar(this.id)"><i class="fa-solid fa-2"></i></button>
-                <button id="3" type="button" class="btn btn-light" value="3" onclick="agregar(this.id)"><i class="fa-solid fa-3"></i></button>
-                <button id="4" type="button" class="btn btn-light" value="4" onclick="agregar(this.id)"><i class="fa-solid fa-4"></i></button>
-                <button id="5" type="button" class="btn btn-light" value="5" onclick="agregar(this.id)"><i class="fa-solid fa-5"></i></button>
-                <button id="6" type="button" class="btn btn-light" value="6" onclick="agregar(this.id)"><i class="fa-solid fa-6"></i></button>
-                <button id="7" type="button" class="btn btn-light" value="7" onclick="agregar(this.id)"><i class="fa-solid fa-7"></i></button>
-                <button id="8" type="button" class="btn btn-light" value="8" onclick="agregar(this.id)"><i class="fa-solid fa-8"></i></button>
-                <button id="9" type="button" class="btn btn-light" value="9" onclick="agregar(this.id)"><i class="fa-solid fa-9"></i></button>
-                <button id="0" type="button" class="btn btn-light" value="0" onclick="agregar(this.id)"><i class="fa-solid fa-0"></i></button>
+                <div class="contenedor-calculo">
+                    <button type="button" class="cal btn btn-danger" onclick="borrar()">AC</button>
+                    <button id="sumar" type="button" class="cal btn btn-light" value="+" onclick="agregar(this.id)"><i
+                            class="fa-solid fa-plus"></i></button>
+                    <button id="restar" type="button" class="cal btn btn-light" value="-" onclick="agregar(this.id)"><i
+                            class="fa-solid fa-minus"></i></button>
+                    <button id="multiplicar" type="button" class="cal btn btn-light" value="*"
+                        onclick="agregar(this.id)"><i class="fa-solid fa-xmark"></i></button>
+                    <button id="dividir" type="button" class="cal btn btn-light" value="/" onclick="agregar(this.id)"><i
+                            class="fa-solid fa-divide"></i></button>
+                    <button type="button" class="cal btn btn-light" value="=" onclick="resultado()"><i
+                            class="fa-solid fa-equals"></i></button>
+                </div>
             </div>
-
-            <div class="contenedor-calculo">
-                <button type="button" class="cal btn btn-danger" onclick="borrar()">AC</button>
-                <button id="sumar" type="button" class="cal btn btn-light" value="+" onclick="agregar(this.id)"><i class="fa-solid fa-plus"></i></button>
-                <button id="restar" type="button" class="cal btn btn-light" value="-" onclick="agregar(this.id)"><i class="fa-solid fa-minus"></i></button>
-                <button id="multiplicar" type="button" class="cal btn btn-light" value="*" onclick="agregar(this.id)"><i class="fa-solid fa-xmark"></i></button>
-                <button id="dividir" type="button" class="cal btn btn-light" value="/" onclick="agregar(this.id)"><i class="fa-solid fa-divide"></i></button>
-                <button type="button" class="cal btn btn-light" value="=" onclick="resultado()"><i class="fa-solid fa-equals"></i></button>
-            </div>
-
-        </div>   
-
+        </form>
     </div>
 
-    
+
 
 
     <script src="../js/main.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+        crossorigin="anonymous"></script>
 </body>
+
 </html>
